@@ -2,18 +2,21 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <Version>0.6</Version>
     <PackAsTool>true</PackAsTool>
     <ToolCommandName>SQLCover</ToolCommandName>
     <PackageOutputPath>./nupkg</PackageOutputPath>
+    <Nullable>enable</Nullable> <!-- optional, but good practice -->
+    <ImplicitUsings>enable</ImplicitUsings> <!-- optional: common usings auto-included -->
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="CommandLineParser" Version="2.8.0" />
-    <PackageReference Include="Microsoft.Data.SqlClient" Version="1.1.1" />
-    <PackageReference Include="Microsoft.SqlServer.DACFx" Version="150.4573.2" />
-  </ItemGroup>
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.1" /> <!-- Updated version -->
+    <PackageReference Include="Microsoft.SqlServer.DACFx" Version="162.1.85" /> <!-- Latest NuGet-compatible -->
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+</ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\SQLCoverLib\SQLCoverLib.csproj" />
